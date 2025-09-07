@@ -1,0 +1,91 @@
+:root{
+  --navy:#0E2242; --gold:#D4A441;
+  --ink:#14171f; --paper:#ffffff;
+  --muted:#6b7280; --line:#e6e8ee;
+  --card:#f8f9fb;
+}
+
+[data-theme="dark"]{
+  --paper:#0b0f17; --ink:#e8ebf1;
+  --card:#0f1622; --line:#1c2432; --muted:#9aa3b2;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0; font-family: ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--paper);}
+
+img{max-width:100%; height:auto; display:block}
+a{color:inherit; text-decoration:none}
+p{line-height:1.6}
+
+.container{max-width:1120px; margin:0 auto; padding:0 20px}
+.sr-only{position:absolute; left:-9999px}
+.skip{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+.skip:focus{left:8px; top:8px; width:auto; height:auto; padding:8px; background:var(--gold); color:#000; z-index:999}
+
+.btn{display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1.1rem; background:var(--navy); color:#fff; border-radius:10px; border:1px solid transparent; transition:.2s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent; color:var(--navy); border-color:var(--navy)}
+.btn.small{padding:.55rem .9rem; font-size:.92rem}
+.icon-btn{background:transparent; border:1px solid var(--line); border-radius:10px; padding:.6rem .7rem; cursor:pointer}
+
+.site-header{position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:1px solid var(--line)}
+.header-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
+.brand{display:flex; align-items:center; gap:.6rem; font-weight:700}
+.logo{width:36px; height:36px}
+.brand-text{letter-spacing:.2px}
+
+.nav-toggle{display:none}
+.nav-list{display:flex; align-items:center; gap:20px; list-style:none; margin:0; padding:0}
+.nav-list a{padding:.5rem .2rem; border-radius:8px}
+.nav-list a:hover{background:var(--card)}
+
+@media (max-width: 860px){
+  .nav-toggle{display:inline-flex}
+  .nav-list{position:absolute; right:20px; top:64px; background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:10px 12px; display:none; flex-direction:column; gap:8px; min-width:200px; box-shadow:0 12px 40px rgba(0,0,0,.1)}
+  .nav-list.open{display:flex}
+}
+
+.hero{padding:56px 0 24px; border-bottom:1px solid var(--line)}
+.hero-inner{display:grid; grid-template-columns: 1.1fr .9fr; gap:32px; align-items:center}
+.hero .lead{color:var(--muted); font-size:1.125rem}
+.hero-actions{display:flex; gap:12px; margin:16px 0 8px}
+.usp{margin:16px 0 0; padding-left:16px; color:var(--muted)}
+.usp li{margin:4px 0}
+.hero-media{justify-self:end}
+@media (max-width: 960px){ .hero-inner{grid-template-columns:1fr} .hero-media{justify-self:center} }
+
+.section{padding:56px 0}
+.section.alt{background:var(--card)}
+.section-head h2{margin:0 0 6px}
+.section-head p{color:var(--muted); margin:0}
+
+.grid.cards{display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; margin-top:18px}
+@media (max-width: 960px){ .grid.cards{grid-template-columns: 1fr 1fr} }
+@media (max-width: 640px){ .grid.cards{grid-template-columns: 1fr} }
+
+.card{border:1px solid var(--line); border-radius:16px; overflow:hidden; background:var(--paper); display:flex; flex-direction:column}
+.card-body{padding:14px}
+.card h3{margin:0 0 6px}
+.card p{margin:0 0 10px; color:var(--muted)}
+.card-actions{display:flex; gap:8px}
+
+.two-col{display:grid; grid-template-columns: 1.1fr .9fr; gap:24px; align-items:start}
+@media (max-width: 900px){ .two-col{grid-template-columns:1fr} }
+
+.feature-card{border:1px dashed var(--line); padding:18px; border-radius:14px; background:transparent}
+
+.news-feed{display:grid; gap:12px}
+.news-item{border:1px solid var(--line); border-radius:12px; padding:12px; background:var(--paper)}
+.news-item time{color:var(--muted); font-size:.9rem}
+
+.newsletter{text-align:center}
+.subscribe{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:10px}
+.subscribe input{padding:.75rem .9rem; border:1px solid var(--line); border-radius:10px; min-width:260px; background:var(--paper); color:var(--ink)}
+.form-msg{margin:6px 0 0; color:var(--muted)}
+
+.contact address{font-style:normal; color:var(--muted)}
+
+.site-footer{border-top:1px solid var(--line); padding:20px 0; margin-top:20px}
+.foot-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+.site-footer nav{display:flex; gap:14px}
